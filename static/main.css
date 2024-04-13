@@ -1,0 +1,90 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #fff; /* Фон страницы */
+}
+
+.wrapper {
+    max-width: 680px; /* Устанавливаем максимальную ширину, как на Medium */
+    margin: 0 auto; /* Центрируем содержимое */
+    padding: 5% 0; /* Отступы сверху и снизу */
+}
+
+.article-header {
+    padding: 1rem 0; /* Уменьшенные вертикальные отступы */
+    margin: 0 1.25rem; /* Горизонтальные отступы для заголовка */
+}
+
+.article-title {
+    margin: 0;
+    color: #333;
+    font-size: 2.5rem; /* Размер шрифта заголовка */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.article-subtitle {
+    color: #666;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.article-meta {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Скругление углов изображения */
+}
+
+.article-content {
+    margin: 0 1.25rem; /* Горизонтальные отступы для содержимого статьи */
+    font-size: 1.125rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 5% 2%; /* Увеличиваем боковые отступы на малых экранах */
+    }
+    .article-header, .article-content {
+        margin: 0 1rem; /* Уменьшаем боковые отступы для заголовка и текста */
+    }
+}
+
+
+
+.input-style {
+    width: 100%; /* Полная ширина в пределах контейнера */
+    padding: 12px 15px; /* Немного больше padding для удобства ввода */
+    margin: 8px 0; /* Небольшой отступ сверху и снизу */
+    border: none; /* Убираем границу */
+    background-color: #f8f8f8; /* Легкий фон, чтобы пользователь видел, где поле ввода */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину элемента */
+    font-size: 1.1rem; /* Увеличиваем размер шрифта */
+}
+
+.button-style {
+    display: block; /* Занимает всю ширину контейнера */
+    width: 80%; /* Сделаем кнопку чуть меньше по ширине */
+    margin: 10px auto; /* Центрирование кнопки и небольшой отступ */
+    padding: 10px; /* Подушечка для кнопки */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Немного меньше текст на кнопке */
+}
+
+.button-style:hover {
+    background-color: #0056b3;
+}
+

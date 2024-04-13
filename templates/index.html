@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправить статью</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="article-header">
+            <h1 class="article-title">Отправить статью</h1>
+            <p class="article-subtitle">Введите заголовок статьи, который хотите сохранить:</p>
+        </header>
+        <form action="{{ url_for('submit') }}" method="post" style="margin: 0 1.25rem; padding: 1rem 0;">
+            <input type="text" id="title" name="title" required placeholder="Заголовок статьи" class="input-style">
+            <button type="submit" class="button-style">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
