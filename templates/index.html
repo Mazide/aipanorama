@@ -9,12 +9,11 @@
 <body>
     <div class="wrapper">
         <header class="article-header">
-            <h1 class="article-title">Сгенерирвоать статью</h1>
-            <p class="article-subtitle">Введите заголовок статьи:</p>
+            <h1 class="article-title">Заголовок</h1>
         </header>
         <form action="{{ url_for('submit') }}" method="post" style="margin: 0 1.25rem; padding: 1rem 0;">
-            <input type="text" id="title" name="title" required placeholder="Заголовок статьи" class="input-style">
-            <button type="submit" class="button-style">Отправить</button>
+            <input type="text" id="title" name="title" required placeholder="" class="input-style">
+            <button type="submit" class="button-style">Погнали</button>
         </form>
     </div>
 </body>
