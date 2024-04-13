@@ -8,11 +8,14 @@ from chatgpt import request_article
 def create_app():
     app = Flask(__name__)
     print(f"sqlite:///{os.path.join('/var/data/site.db')}")
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join('/var/data/site.db')}"
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite://{os.path.join('/var/data/site.db')}"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = True  # Включаем логирование SQL-запросов
 
     db.init_app(app)  # Инициализация SQLAlchemy с приложением Flask
+    with app.app_context():
+        print("db.create_all()")
+        db.create_all()
     return app
 
 app = create_app()
@@ -51,7 +54,4 @@ def submit():
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        print("create_tables")
-        db.create_all()  # Создаем таблицы в базе данных
     app.run(debug=True)
