@@ -6,8 +6,10 @@ from chatgpt import request_article
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = '/var/data/site.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_ECHO'] = True  # Включаем логирование SQL-запросов
+
     db.init_app(app)  # Инициализация SQLAlchemy с приложением Flask
     return app
 
@@ -29,9 +31,6 @@ def submit():
         title = request.form['title']
         image = request_image(title)
         article = request_article(title, image)
-        print("3892832983892398")
-        print(article.image_filename)
-        print("3892832983892398")
         # Перенаправляем на страницу с этой статьей
         return redirect(url_for('article', article_id=article.id))
     return redirect(url_for('home'))
