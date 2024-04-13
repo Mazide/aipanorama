@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 from repository import db, Article
+from image_search import request_image
 from chatgpt import request_article
 
 def create_app():
@@ -20,14 +21,17 @@ def home():
 def article(article_id):
     # Загрузка статьи по ID
     article = Article.query.get_or_404(article_id)
-    print(article.content)
     return render_template('article.html', article=article)
 
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         title = request.form['title']
-        article = request_article(title)
+        image = request_image(title)
+        article = request_article(title, image)
+        print("3892832983892398")
+        print(article.image_filename)
+        print("3892832983892398")
         # Перенаправляем на страницу с этой статьей
         return redirect(url_for('article', article_id=article.id))
     return redirect(url_for('home'))

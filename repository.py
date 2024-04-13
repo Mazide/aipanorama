@@ -8,7 +8,7 @@ class Article(db.Model):
     subtitle = db.Column(db.String(150))
     author = db.Column(db.String(50), nullable=False)
     content = db.Column(db.Text, nullable=False)
-    image_filename = db.Column(db.String(100))
+    image_filename = db.Column(db.String(400), nullable=False)
 
     def __repr__(self):
         return f"<Article {self.title}>"

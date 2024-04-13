@@ -12,9 +12,9 @@
             <p class="article-subtitle">{{ article.subtitle }}</p>
             <div class="article-meta">{{ article.author }}</div>
         </header>
-        <!-- <figure class="article-image">
-            <img src="{{ url_for('static', filename=article.image_filename) }}" alt="{{ article.title }}">
-        </figure> -->
+        <figure class="article-image">
+            <img src="{{article.image_filename}}">
+        </figure>
         <article class="article-content">
             {{ article.content | safe }} <!-- Используем фильтр 'safe' для сохранения HTML-форматирования -->
         </article>
