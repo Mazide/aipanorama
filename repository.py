@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
+print("db instance created")
 db = SQLAlchemy()  # Создаем экземпляр SQLAlchemy
 
 class Article(db.Model):
