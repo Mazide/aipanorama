@@ -16,7 +16,7 @@ def request_article(title: str, image: str) -> Article:
         ]
     )
 
-    random_id = random.randint(1, 10000)
+    random_id = random.randint(1, 10000000)
 
     content = completion.choices[0].message.content
     new_article = Article(id=random_id, title=title, subtitle="мдауж",  content=content, author="gpt-3.5-turbo", image_filename=image)
