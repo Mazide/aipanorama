@@ -31,6 +31,10 @@ def submit():
         title = request.form['title']
         image = request_image(title)
         article = request_article(title, image)
+        
+        db.session.add(article)
+        db.session.commit()
+        
         # Перенаправляем на страницу с этой статьей
         return redirect(url_for('article', article_id=article.id))
     return redirect(url_for('home'))
