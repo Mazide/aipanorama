@@ -50,5 +50,6 @@ def submit():
 
 if __name__ == '__main__':
     with app.app_context():
+        print("create_tables")
         db.create_all()  # Создаем таблицы в базе данных
     app.run(debug=True)
