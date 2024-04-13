@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 
 from repository import db, Article
@@ -6,7 +7,8 @@ from chatgpt import request_article
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///var/data/site.db'
+    print(f"sqlite:///{os.path.join('/var/data/site.db')}")
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite://{os.path.join('/var/data/site.db')}"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = True  # Включаем логирование SQL-запросов
 
