@@ -4,5 +4,5 @@ from repository import db
 
 if __name__ == "__main__":
     application.run()
-    with application.app_context():
-        db.create_all()
+    print("create_all_tables")
+    db.create_all()
