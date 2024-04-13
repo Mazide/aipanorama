@@ -1,8 +1,12 @@
+import os
 import random
 from openai import OpenAI
 from repository import Article, db
 
-client = OpenAI(api_key='')
+api_key = os.environ.get('OPEN_AI_API_KEY')
+
+client = OpenAI(api_key=api_key)
+
 
 
 def request_article(title: str) -> Article:
