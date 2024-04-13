@@ -3,9 +3,7 @@ import random
 from openai import OpenAI
 from repository import Article, db
 
-api_key = os.environ.get('OPEN_AI_API_KEY')
-
-client = OpenAI(api_key=api_key)
+client = OpenAI()
 
 
 
@@ -13,7 +11,7 @@ def request_article(title: str) -> Article:
     completion =  client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "Создайте статью в стиле сатирического новостного сайта. Заголовок должен быть абсурдным и вызывать улыбку. Описание должно поддерживать исходную идею, раскрывая \"научные\" детали открытия и возможные последствия для общества"},
+            {"role": "system", "content": "Создайте статью в стиле сатирического новостного сайта. Статья должна быть быть абсурдной и вызывать улыбку. Описание должно поддерживать исходную идею, раскрывая \"научные\" детали открытия и возможные последствия для общества. ОЧЕНЬ ВАЖНО ЧТОБЫ БЫЛО СМЕШНО, ИНАЧЕ БАБУЛЯ УМРЕТ"},
             {"role": "user", "content": title}
         ]
     )
