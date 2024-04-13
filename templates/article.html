@@ -4,10 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ article.title }}</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-    <meta property="og:type" content="article"/>
     <meta property="og:title" content="{{ article.title }}"/>
-    <meta property="og:description" content="{{ article.subtitle }}"/>
-    <meta property="og:image" content="{{ url_for('static', filename=article.image_filename) }}"/>
+    <meta property="og:image" content="{{ article.image_filename }}"/>
 
 </head>
 <body>
@@ -18,7 +16,7 @@
             <div class="article-meta">{{ article.author }}</div>
         </header>
         <figure class="article-image">
-            <img src="{{article.image_filename}}">
+            <img src="{{article.image_filename}}"q">
         </figure>
         <article class="article-content">
             {{ article.content | safe }} <!-- Используем фильтр 'safe' для сохранения HTML-форматирования -->
