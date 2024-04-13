@@ -16,8 +16,6 @@ def request_image(query: str) -> str:
     }
     response = requests.get(endpoint, headers=headers, params=params)
     data = response.json()
-    print(data)
-
     if data['value']:  # Проверка на наличие изображений
         photo = random.choice(data['value'])  # Случайный выбор одного из изображений
         print(photo['contentUrl'])
